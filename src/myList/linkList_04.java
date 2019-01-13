@@ -2,6 +2,10 @@ package myList;
 
 import utils.ListNode;
 
+//合并两个有序链表
+/*
+* 两个指针分别指向链表的头结点  遍历两个链表 插入第三个链表即可
+* */
 public class linkList_04
 {
     public static void main(String[] args)
