@@ -1,5 +1,8 @@
 package myString;
 
+/*
+* 有效的字母异位词
+* */
 public class String_04
 {
     public static void main(String[] args)

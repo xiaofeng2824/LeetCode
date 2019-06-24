@@ -1,5 +1,6 @@
 package MyTest;
 
+import myList.AddTwoNumber;
 import myList.CycleList;
 import myList.PalindromeList_05;
 import org.junit.Test;
@@ -41,8 +42,35 @@ public class testList {
         CycleList list = new CycleList();
         boolean b = list.hasCycle(head);
         System.out.println("链表中是否有环："+b);
+    }
 
+    //测试两个链表数字相加
+    /*
+    *            Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+    *            Output: 7 -> 0 -> 8
+    * */
+    @Test
+    public void test02()
+    {
+        String str1 = "[2,4,3]";
+        String str2 = "[5,6,4]";
 
+        ListNode l1 = ListNode.createTestData(str1);
+
+        ListNode l2 = ListNode.createTestData(str2);
+
+        ListNode.print(l1);
+        ListNode.print(l2);
+
+        ListNode node = AddTwoNumber.addTwoNumbers(l1, l2);
+
+        ListNode t = node;
+
+        while(t != null)
+        {
+            System.out.print(t.val);
+            t = t.next;
+        }
     }
 
 }

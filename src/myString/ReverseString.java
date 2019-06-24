@@ -1,6 +1,9 @@
 package myString;
 
-public class String_01
+/*
+* 字符串的反转
+* */
+public class ReverseString
 {
     public static void main(String[] args)
     {

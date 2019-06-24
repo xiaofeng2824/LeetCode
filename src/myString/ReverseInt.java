@@ -1,6 +1,9 @@
 package myString;
 
-public class String_02
+/*
+* 整数反转
+* */
+public class ReverseInt
 {
     public static void main(String[] args)
     {

@@ -1,5 +1,7 @@
 package myString;
 
+//最长公共子串
+
 /*
 //�������һ
 class Solution {
@@ -24,7 +26,7 @@ class Solution {
     }
 }
  */
-public class String_09
+public class LongestCommonSubstring
 {
     public static void main(String[] args)
     {

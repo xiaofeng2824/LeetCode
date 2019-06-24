@@ -1,6 +1,9 @@
 package myString;
 
-public class String_03
+/*
+* 字符串第一个唯一字符
+* */
+public class FirstSingleChar
 {
  public static void main(String[] args)
  {

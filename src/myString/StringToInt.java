@@ -1,7 +1,10 @@
 package myString;
 
+/*
+* 字符串转换整数
+* */
 import java.lang.String;
-public class String_06
+public class StringToInt
 {
     public static void main(String[] args)
     {

@@ -1,7 +1,10 @@
 package myString;
 
+/*
+* 验证回文字符串
+* */
 import java.lang.String;
-public class String_05
+public class PalindromeString
 {
     public static void main(String[] args)
     {

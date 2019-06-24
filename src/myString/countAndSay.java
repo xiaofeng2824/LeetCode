@@ -1,6 +1,7 @@
 package myString;
 
-public class String_08
+//报数
+public class countAndSay
 {
     public static void main(String[] args)
     {

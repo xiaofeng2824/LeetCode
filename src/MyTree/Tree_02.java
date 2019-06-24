@@ -48,8 +48,5 @@ public class Tree_02 {
                 return false;
 
            return  isValidBST(root.left) & isValidBST(root.right);
-
-
-
     }
 }

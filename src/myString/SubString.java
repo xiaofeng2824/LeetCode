@@ -1,6 +1,7 @@
 package myString;
 
-public class String_07
+//实现子字符串
+public class SubString
 {
     public static void main(String[] args)
     {
