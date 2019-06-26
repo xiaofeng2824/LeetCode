@@ -57,6 +57,6 @@ public class IsPalindrome {
             x  /= 10;
         }
 
-        return x == reverse || reverse == x % 10;
+        return x == reverse || x == reverse / 10;
     }
 }
