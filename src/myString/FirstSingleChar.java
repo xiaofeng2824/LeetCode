@@ -9,7 +9,7 @@ public class FirstSingleChar
  {
             String s = "loveleetcode";
             int nub = fisstUniqChas(s);
-            System.out.println("��һ�����ظ����ַ����±��ǣ�"+nub);
+            System.out.println("字符串的第一个唯一字符下标："+nub);
             
         } 
         

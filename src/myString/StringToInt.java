@@ -25,7 +25,7 @@ public class StringToInt
             if(i==0 && (c=='-'||c=='+')){
                 isPos = c=='+'?true:false;
             } else if (c>='0' && c<='9'){
-                // ���������
+                //
                 if(result>(Integer.MAX_VALUE - (c - '0'))/10){
                     return isPos? Integer.MAX_VALUE : Integer.MIN_VALUE;
                 }
