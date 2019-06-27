@@ -6,7 +6,7 @@ import utils.ListNode;
 /*
 * 两个指针分别指向链表的头结点  遍历两个链表 插入第三个链表即可
 * */
-public class linkList_04
+public class MergeSortedList
 {
     public static void main(String[] args)
     {
@@ -23,7 +23,7 @@ public class linkList_04
         l2.next = l2_node1;
         l2_node1.next = l2_node2;
         
-        //��ӡ����
+
         System.out.println("�ϲ�����֮ǰ");
        ListNode p = l1;
        while(p != null)
@@ -33,7 +33,7 @@ public class linkList_04
        }
        ListNode l3 = mergeTwoLists(l1,  l2);
        System.out.println();
-       System.out.println("�ϲ�����֮��");
+       System.out.println("合并的链表是：");
        while(l3 != null)
        {
         System.out.print(l3.val + " ");
