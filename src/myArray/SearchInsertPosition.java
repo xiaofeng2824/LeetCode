@@ -14,6 +14,12 @@ package myArray;
  */
 public class SearchInsertPosition {
 
+    /**
+     * 数组有序  即用二分法解决
+     * @param nums
+     * @param target
+     * @return
+     */
     public int indexOfTarget(int[] nums,int target)
     {
         int left = 0;

@@ -1,11 +1,16 @@
 package myString;
 
-//报数
+/**
+ * 例子：
+ * 1：一个1 -> 11
+ * 11 两个1 -> 21
+ * 21 一个2一个1 -> 1211
+ */
 public class countAndSay
 {
     public static void main(String[] args)
     {
-        int n =4;
+        int n =5;
         String str = countAndSay(n);
         System.out.println(str);
     }
@@ -21,20 +26,19 @@ public class countAndSay
 
            while(index < result.length())
            {
-               //��¼ֵ
+               //取出字符串每位数字
                char val = result.charAt(index);
-               //��¼����λ��
+               //记录字符串数字出现的次数
                int count= 0;
 
-               //��������λ�������ϲ���ͬ������ʱֹͣ��
+               //判断是否有同样的字符
                while(index < result.length() && result.charAt(index) == val)
                {
                    index++;
                    count++;
                }
-               //׷������λ���������
+               //拼有几个字符
                builder.append(String.valueOf(count));
-               //׷������λ����ֵ�������
                builder.append(val);
            }
 
