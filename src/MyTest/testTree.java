@@ -1,9 +1,11 @@
 package MyTest;
 
-import MyTree.Tree_01;
-import MyTree.Tree_02;
+
+import MyTree.DepthOfTree;
 import org.junit.Test;
 import utils.TreeNode;
+
+import static MyTree.validationBinarySearchTree.isValidBST;
 
 public class testTree {
 
@@ -20,7 +22,7 @@ public class testTree {
         //打印树
         TreeNode.print(root);
 
-        int i = Tree_01.maxDepth(root);
+        int i = DepthOfTree.maxDepth(root);
         System.out.println("树的深度是："+i);
     }
 
@@ -32,7 +34,7 @@ public class testTree {
         TreeNode root = TreeNode.createTestData(tree);
         TreeNode.print(root);
 
-        boolean validBST = Tree_02.isValidBST(root);
+        boolean validBST = isValidBST(root);
         System.out.println("是否是二叉搜索树:"+validBST);
     }
 }
