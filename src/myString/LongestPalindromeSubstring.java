@@ -31,7 +31,9 @@ public class LongestPalindromeSubstring {
 
         for(int i=0;i<len;i++)
         {
+            //奇数
             helper(ss,i,i);
+            //偶数
             helper(ss,i,i+1);
         }
 

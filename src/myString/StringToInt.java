@@ -16,12 +16,16 @@ public class StringToInt
     public static int atoi(String str)
     {
         if(str.isEmpty()) return 0;
-        
+
+        //去掉前后的空格
         str = str.trim();
+
         int result = 0;
+        // 正数 负数的标识
         boolean isPos = true;
         for(int i = 0; i < str.length(); i++){
             char c = str.charAt(i);
+            //判断正数还是负数
             if(i==0 && (c=='-'||c=='+')){
                 isPos = c=='+'?true:false;
             } else if (c>='0' && c<='9'){
