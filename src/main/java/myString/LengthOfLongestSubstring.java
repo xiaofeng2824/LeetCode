@@ -1,7 +1,7 @@
 package myString;
 
 //计算不带重复字符的最长子字符串的长度
-/*
+/**
 * 解题思路：
 *   1.hash[] hash数组存储字符串的信息 例：hash[c] = i 表示字符c在字符串第i个字符上
 *    如果后面再次出现c字符  字符的位置将会被更新
@@ -39,7 +39,6 @@ public class LengthOfLongestSubstring {
              hash[c] = i + 1;
              if(l > max) max = l;
          }
-
          return max;
     }
 
