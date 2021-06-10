@@ -1,6 +1,6 @@
 package myArray;
 
-import org.jetbrains.annotations.Nullable;
+
 
 import java.util.HashMap;
 
@@ -49,7 +49,7 @@ public class twoNum {
     * 时间复杂度为： O(n) = n
     * */
 
-    @Nullable
+
     public static int[] twonum2(int[] nums, int target)
     {
         int len = nums.length;
