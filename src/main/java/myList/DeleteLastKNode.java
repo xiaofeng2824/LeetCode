@@ -1,6 +1,7 @@
 package myList;
 
 
+import utils.DoubleNode;
 import utils.ListNode;
 
 /**
@@ -8,12 +9,6 @@ import utils.ListNode;
  */
 public class DeleteLastKNode {
 
-    // 双链表节点
-    public static class DoubleNode{
-        int value;
-        DoubleNode last;
-        DoubleNode next;
-    }
 
     public static void main(String[] args) {
 
