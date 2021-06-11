@@ -23,6 +23,7 @@ public class GetMax {
         int scA = sign(c);
         // b大小的标志  0 表示小  1 表示大  将a的标志 或一下就行
         int scB = flip(scA);
+        // 返回最大的数
         return a * scA + b * scB;
     }
 }
