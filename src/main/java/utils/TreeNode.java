@@ -21,7 +21,7 @@ public class TreeNode {
                 //将子字符串 由 "," 分割为若干个字符串，得到元素的字符串数组
                 String[] split = data.split(",");
                 //得到字符串的长度 len
-                int len = len = split.length;
+                int len = split.length;
                 //声明一个长度为len的树节点的数组
                 TreeNode[] treeNodes = new TreeNode[len];
                // data = data.substring(1, data.length() - 1);
@@ -85,5 +85,11 @@ public class TreeNode {
                         res.append(" ");
                 }
                 System.out.println(res);
+        }
+
+        public static void main(String[] args) {
+                String tree = "[1,2,3,4,5,6,7]";
+                TreeNode rootNode = createTestData(tree);
+                print(rootNode);
         }
 }
