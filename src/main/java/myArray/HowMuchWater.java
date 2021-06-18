@@ -13,7 +13,7 @@ package myArray;
 public class HowMuchWater {
 
     public static void main(String[] args) {
-       int[]  arr = {3,1,2,5,2,4};
+       int[]  arr = {1,2,1};
         int water1 = getWater1(arr);
 
         System.out.println(water1);
@@ -23,6 +23,9 @@ public class HowMuchWater {
 
         int water3 = getWater3(arr);
         System.out.println(water3);
+
+        int water4 = getWater4(arr);
+        System.out.println(water4);
 
     }
 
@@ -94,32 +97,47 @@ public class HowMuchWater {
     //  左右指针的写法
     public static int getWater3(int[] arr){
 
-        if (arr == null || arr.length < 3){
+        if (arr == null || arr.length < 3) {
             return 0;
         }
-        int res = 0 ;
-
-        // 左边最大值
+        int res = 0;
         int leftMax = arr[0];
-        // 右边最大值
         int rightMax = arr[arr.length - 1];
-
-        // 左右指针
         int L = 1;
         int R = arr.length - 2;
-
-        while(L <= R){
-            // 左边小 计算左边位置上的水量
-            if (leftMax <= rightMax){
-                res += Math.max(0,leftMax - arr[L]);
-                // 左边最大值向右一一位
-                leftMax = Math.max(leftMax,arr[L++]);
+        while (L <= R) {
+            if (leftMax <= rightMax) {
+                res += Math.max(0, leftMax - arr[L]);
+                leftMax = Math.max(leftMax, arr[L++]);
             } else {
-                res += Math.max(0,rightMax - arr[R]);
-                rightMax = Math.max(rightMax,arr[R--]);
+                res += Math.max(0, rightMax - arr[R]);
+                rightMax = Math.max(rightMax, arr[R--]);
             }
         }
-
         return res;
     }
+
+public static int getWater4(int[] height){
+    if (height == null || height.length < 3){
+        return 0;
+    }
+
+    int start = 1;
+    int end = height.length - 2;
+    int leftMax = height[0];
+    int rightMax = height[height.length - 1];
+
+    int res = 0;
+
+    while(start <= end){
+        if (leftMax <= rightMax){
+            res += Math.max(0,leftMax - height[start]);
+            leftMax = Math.max(leftMax,height[start++]);
+        }else {
+            res += Math.max(0,rightMax - height[end]);
+            rightMax = Math.max(rightMax,height[end--]);
+        }
+    }
+    return res;
+}
 }

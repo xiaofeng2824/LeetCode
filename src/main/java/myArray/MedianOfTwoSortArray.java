@@ -13,6 +13,13 @@ The median is (2 + 3)/2 = 2.5
 * */
 public class MedianOfTwoSortArray {
 
+    public static void main(String[] args) {
+        int[] nums1 = {1,2};
+        int[] nums2 = {3,4};
+        System.out.println(findMedianSortedArrays(nums1,nums2));
+
+    }
+
     public static double findMedianSortedArrays(int[] nums1, int[] nums2)
     {
         //得到两个数组的总长度
@@ -20,8 +27,7 @@ public class MedianOfTwoSortArray {
         //数组长度为偶数 则需要取中间的两个数求平均值
         if(len%2 == 0)
         {
-            return (helper(nums1,0,nums2,0,len/2) +
-                    helper(nums1,0,nums2,0,len/2 + 1))/2.0;
+            return (helper(nums1,0,nums2,0,len/2) + helper(nums1,0,nums2,0,len/2 + 1))/2.0;
         }
 
         //如果长度是偶数
