@@ -16,7 +16,6 @@ public class AddTwoNumber {
         //链表模拟算数运算
         //node 为头结点
         ListNode node = new ListNode(0);
-
         // t 为迭代变量节点
         ListNode t = node;
         ListNode n1 = l1,n2 = l2;
@@ -28,26 +27,19 @@ public class AddTwoNumber {
         {
             //如果有进位 则取出进位
             sum = sum/10;
-            if(n1 != null)
-            {
+            if(n1 != null) {
                 sum += n1.val;
                 n1 = n1.next;
             }
 
-            if(n2 != null)
-            {
+            if(n2 != null) {
                 sum += n2.val;
                 n2 = n2.next;
             }
-
             //将所求之和的个数上的数值赋值给新的节点
             t.next = new ListNode(sum%10);
             t = t.next;
         }
-
         return node.next;
     }
-
-
-
 }

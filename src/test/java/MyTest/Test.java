@@ -10,8 +10,6 @@ public class Test{
       int[] test = new int[] {1,2,3,4};
         List list = Arrays.asList(test);
         System.out.println(list.size());
-
-
      }
 
 
