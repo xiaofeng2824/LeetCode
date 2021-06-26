@@ -58,7 +58,6 @@ public class Permute {
         int[] visited = new int[nums.length];
         backtrack(res, nums, new ArrayList<Integer>(), visited);
         return res;
-
     }
 
     private static void backtrack(List<List<Integer>> res, int[] nums, ArrayList<Integer> tmp, int[] visited) {
@@ -75,6 +74,7 @@ public class Permute {
             tmp.add(nums[i]);
             // 递归访问
             backtrack(res, nums, tmp, visited);
+            //恢复现场，以便于下次循环使用
             visited[i] = 0;
             tmp.remove(tmp.size() - 1);
         }
