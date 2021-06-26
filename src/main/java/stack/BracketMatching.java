@@ -1,5 +1,7 @@
 package stack;
 
+import java.util.Stack;
+
 /**
  * 判断括号是否匹配
  *
@@ -36,10 +38,42 @@ public class BracketMatching {
         return top == 0;
     }
 
+    // 直接用栈实现
+    public static boolean isValid2(String s) {
+
+        Stack stack = new Stack();
+
+        char[] chars = s.toCharArray();
+
+        for (char a : chars){
+            if (a == '(' || a == '{' || a == '['){
+                stack.push(a);
+            }else if (
+                           stack.isEmpty()
+                            ||    (a == ')'   && (char)stack.pop() != '(')
+                            ||  (a == ']'  && (char)stack.pop() != '[')
+                            ||  (a == '}'  && (char)stack.pop() != '{')
+            ){
+                return  false;
+            }
+        }
+
+        return stack.isEmpty();
+
+    }
+
     //测试
     public static void main(String[] args) {
-        System.out.println(isValid("{}{}[]()"));
+//        System.out.println(isValid("{}{}[]()"));
         System.out.println(isValid("{}{}[]()(("));
         System.out.println(isValid("{{[()()]}}"));
+
+        System.out.println();
+
+        //System.out.println(isValid2("]"));
+        System.out.println(isValid2("{}{}[]()(("));
+        System.out.println(isValid2("{{[()()]}}"));
     }
+
+
 }
