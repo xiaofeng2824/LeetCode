@@ -49,16 +49,23 @@ public class PhoneNumCombination {
 
     public static void main(String[] args) {
 
+        String digits = "23";
+        List<String> strings = letterCombinations(digits);
+        System.out.println(strings.toString());
+
     }
 
-    public List<String> letterCombinations(String digits) {
+    public static List<String> letterCombinations(String digits) {
 
-        List<String>list=new ArrayList<>();
-        String []s=new String[digits.length()];
-        int M = digits.length();
+        List<String> list = new ArrayList<>();
+        String[] s = new String[digits.length()];
+
+        // 边界值处理
         if(s.length==0){
             return list;
         }
+
+        // 将电话号码上的数字对应的字母 存到s数组中
         for(int i=0;i<digits.length();i++){
             switch (digits.charAt(i)){
                 case '2':s[i]="abc";break;
@@ -75,14 +82,16 @@ public class PhoneNumCombination {
         return list;
     }
 
-    private static List<String> getStringWithFor(String []s,int i,List<String> list,String stemp) {
+    private static List<String> getStringWithFor(String [] s,int i,List<String> list,String stemp) {
 
-        if(i<s.length-1){
+        // 不是最后一个数字
+        if(i < s.length - 1){
             for(int j=0;j<s[i].length();j++){
-                list=getStringWithFor(s,i+1,list,stemp+s[i].charAt(j));
+                list = getStringWithFor(s,i+1,list,stemp+s[i].charAt(j));
             }
             i++;
         } else {
+            // 最后一个数字 递归出口
             for(int j=0;j<s[i].length();j++){
                 list.add(stemp+s[i].charAt(j));
             }
