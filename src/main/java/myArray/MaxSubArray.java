@@ -22,7 +22,7 @@ public class MaxSubArray {
         int len = nums.length,dp = nums[0],max = dp;
         for (int i = 1;i < len;i++)
         {
-            //如果当前序列和大于0 一直往下加下一位
+            //如果当前序列和大于0 一直往下加下一位，否则就从当前位置重新计算
             dp = nums[i] + (dp > 0 ? dp:0);
             //比较当前子序列和与最大值
             if(dp > max) max = dp;
