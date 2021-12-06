@@ -13,9 +13,9 @@ package myArray;
 public class HowMuchWater {
 
     public static void main(String[] args) {
-       int[]  arr = {1,2,1};
-        int water1 = getWater1(arr);
+        int[]  arr = {3,1,2,5,2,4};
 
+        int water1 = getWater1(arr);
         System.out.println(water1);
 
         int water2 = getWater2(arr);
@@ -38,7 +38,7 @@ public class HowMuchWater {
         int res = 0 ;
 
         //0  length - 1位置肯定没有水，
-        for (int i=1;i<arr.length - 1;i++){
+        for (int i = 1;i < arr.length - 1;i++){
 
             int leftMax = 0;
             int rightMax = 0;
