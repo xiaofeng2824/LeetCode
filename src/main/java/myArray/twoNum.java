@@ -38,6 +38,11 @@ public class twoNum {
                     return new int[] {i,j};
             }
         }
+        Thread t1 = new Thread(()->{
+            System.out.println("hello");
+        });
+        t1.isInterrupted();
+
 
         return null;
     }
