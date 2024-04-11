@@ -1,4 +1,4 @@
-package dynamicPlan;
+package dp;
 
 public class ClimbStairs {
 
