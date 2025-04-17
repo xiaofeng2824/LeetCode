@@ -8,8 +8,6 @@ public class Test{
 
     public static void main(String args[]) {
 
-        new ThreadLocal<>()
-
     }
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
