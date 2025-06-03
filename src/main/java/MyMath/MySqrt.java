@@ -17,5 +17,8 @@ public class MySqrt {
     public static void main(String[] args) {
         MySqrt mySqrt = new MySqrt();
         System.out.println(mySqrt.mySqrt(10));
+        System.out.println(mySqrt.mySqrt(8));
+        System.out.println(mySqrt.mySqrt(9));
+
     }
 }

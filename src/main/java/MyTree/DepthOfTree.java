@@ -43,6 +43,12 @@ public class DepthOfTree {
           return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
         * */
 
+    }
+
+    public static void main(String[] args) {
+        String testData = "[3,9,20,null,null,15,7]";
+        TreeNode root = TreeNode.createTestData(testData);
+        TreeNode.print(root);
 
     }
 }

@@ -7,6 +7,12 @@ public class DoubleNode {
       public  DoubleNode last;
       public   DoubleNode next;
 
+    public DoubleNode(){
+    }
+      public DoubleNode(int value){
+          this.value = value;
+      }
+
     public int getValue() {
         return value;
     }

@@ -15,17 +15,26 @@ import utils.ListNode;
 public class ReversePartList {
 
     public static void main(String[] args) {
+        // 测试数据
+        ListNode head = ListNode.createTestData("[1,2,3,4,5]");
+        // 翻转部分链表
+        ListNode node = reversePartList(head, 2, 4);
+        // 打印链表
+        ListNode.print(node);
 
     }
 
     // 延续翻转链表的思路，只不过将翻转的头节点放到了第n个节点
-    public ListNode reversePartList(ListNode head,int from,int to){
+    public static ListNode reversePartList(ListNode head,int from,int to){
 
         int len = 0;
        ListNode cur = head;
+       // 定位from 节点
        ListNode fpre = null;
+       // 定位to 节点
        ListNode tPos = null;
 
+       // 定位
        while(cur != null){
            len++;
            fpre = len == from - 1 ? cur : fpre;
@@ -33,7 +42,7 @@ public class ReversePartList {
            cur = cur.next;
        }
 
-       // 边界值处理
+       // 边界值处理  首节点  >  尾节点
        if (from > to || from < 1 || to > len){
            return head;
        }
