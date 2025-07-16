@@ -1,6 +1,5 @@
 package test;
 
-import lombok.Data;
 
 public class PrintOddEven {
 
