@@ -54,12 +54,12 @@ public class FourNumAdd {
     public static int fourSumCount1(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
 
         int res = 0;
-        for (int i = 0;i < nums1.length;i++){
-            for (int j = 0;j < nums2.length;j++){
-                for (int k = 0;k < nums3.length;k++){
-                    for (int l = 0;l < nums4.length;l++){
-                        if (nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0){
-                            res ++;
+        for (int i = 0; i < nums1.length; i++) {
+            for (int j = 0; j < nums2.length; j++) {
+                for (int k = 0; k < nums3.length; k++) {
+                    for (int l = 0; l < nums4.length; l++) {
+                        if (nums1[i] + nums2[j] + nums3[k] + nums4[l] == 0) {
+                            res++;
                         }
                     }
                 }
@@ -74,17 +74,17 @@ public class FourNumAdd {
 
 
         int res = 0;
-        Map<Integer,Integer>  map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
-        for (int a : nums1){
-            for (int b : nums2){
-              map.put(a + b,map.getOrDefault(a + b,0) + 1);
+        for (int a : nums1) {
+            for (int b : nums2) {
+                map.put(a + b, map.getOrDefault(a + b, 0) + 1);
             }
         }
 
-        for (int c : nums3){
-            for (int d : nums4){
-                res += map.getOrDefault(-(c + d),0);
+        for (int c : nums3) {
+            for (int d : nums4) {
+                res += map.getOrDefault(-(c + d), 0);
             }
         }
 
@@ -95,13 +95,13 @@ public class FourNumAdd {
     public static void main(String[] args) {
 
         // testcase
-         int[] nums1 = {1,2}, nums2 = {-2,-1}, nums3 = {-1,2}, nums4 = {0,2};
+        int[] nums1 = {1, 2}, nums2 = {-2, -1}, nums3 = {-1, 2}, nums4 = {0, 2};
 
 //        int[] nums1 = {0}, nums2 = {0}, nums3 = {0}, nums4 = {0};
         //
-        System.out.println(fourSumCount1(nums1,nums2,nums3,nums4));
+        System.out.println(fourSumCount1(nums1, nums2, nums3, nums4));
 
         // 方法2
-        System.out.println(fourSumCount2(nums1,nums2,nums3,nums4));
+        System.out.println(fourSumCount2(nums1, nums2, nums3, nums4));
     }
 }

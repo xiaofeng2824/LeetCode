@@ -6,15 +6,13 @@ package MyMath;
  */
 public class MaxProfit {
 
-    public int maxProfit(int[] prices)
-    {
+    public int maxProfit(int[] prices) {
         int max = 0;
         int minPrice = Integer.MAX_VALUE;
-        for (int i = 0;i<prices.length;i++)
-        {
-            if(prices[i] < minPrice) minPrice = prices[i];
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < minPrice) minPrice = prices[i];
             int delta = prices[i] - minPrice;
-            if(delta > max) max = delta;
+            if (delta > max) max = delta;
         }
 
         return max;

@@ -4,7 +4,6 @@ import utils.ListNode;
 
 /**
  * 打印两个有序链表的公共部分
- *
  */
 public class PrintCommonNode {
     public static void main(String[] args) {
@@ -26,20 +25,20 @@ public class PrintCommonNode {
         // 链表2
         node5.next = node2;
 
-       printCommonNode(node1,node5);
+        printCommonNode(node1, node5);
 
     }
 
     // 打印两个有序链表的公共部分
-    public static void printCommonNode(ListNode head1,ListNode head2){
+    public static void printCommonNode(ListNode head1, ListNode head2) {
 
         System.out.println("开始打印两个链表的公共部分");
-        while(head1 != null  && head2 != null){
-            if (head1.val < head2.val){
+        while (head1 != null && head2 != null) {
+            if (head1.val < head2.val) {
                 head1 = head1.next;
-            }else if (head2.val < head1.val){
+            } else if (head2.val < head1.val) {
                 head2 = head2.next;
-            }else {
+            } else {
                 System.out.print(head1.val + "  ");
                 head1 = head1.next;
                 head2 = head2.next;

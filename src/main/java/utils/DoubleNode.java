@@ -3,15 +3,16 @@ package utils;
 
 public class DoubleNode {
 
-      public  int value;
-      public  DoubleNode last;
-      public   DoubleNode next;
+    public int value;
+    public DoubleNode last;
+    public DoubleNode next;
 
-    public DoubleNode(){
+    public DoubleNode() {
     }
-      public DoubleNode(int value){
-          this.value = value;
-      }
+
+    public DoubleNode(int value) {
+        this.value = value;
+    }
 
     public int getValue() {
         return value;

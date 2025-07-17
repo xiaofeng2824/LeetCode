@@ -44,9 +44,9 @@ public class Permute {
 
     public static void main(String[] args) {
 
-        int[] nums = {1,2,3};
+        int[] nums = {1, 2, 3};
         List<List<Integer>> permute = permute(nums);
-        for (List<Integer> arr : permute){
+        for (List<Integer> arr : permute) {
             System.out.println(arr.toString());
         }
 

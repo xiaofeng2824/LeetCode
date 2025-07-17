@@ -6,60 +6,56 @@ import java.util.LinkedList;
 
 /**
  * 验证是否是对称树
- *
+ * <p>
  * [1,2,2,3,4,4,3]  true
- *
+ * <p>
  * 例：
- *
- *     1
- *    / \
- *   2   2
- *  / \ / \
+ * <p>
+ * 1
+ * / \
+ * 2   2
+ * / \ / \
  * 3  4 4  3
- *
+ * <p>
  * [1,2,2,null,3,null,3] false
- *
- *     1
- *    / \
- *   2   2
- *    \   \
- *    3    3
- *
+ * <p>
+ * 1
+ * / \
+ * 2   2
+ * \   \
+ * 3    3
  */
 public class SymmetricTree {
 
     /**
      * 深度搜索
+     *
      * @param root
      * @return
      */
-    public boolean isSymmtric(TreeNode root)
-    {
-        return root == null || helper(root.left,root.right);
+    public boolean isSymmtric(TreeNode root) {
+        return root == null || helper(root.left, root.right);
     }
 
-    public boolean helper(TreeNode left,TreeNode right)
-    {
+    public boolean helper(TreeNode left, TreeNode right) {
         if (left == null || right == null) return left == right;
         if (left.val != right.val) return false;
 
-        return helper(left.left,right.right) && helper(left.right, right.left);
+        return helper(left.left, right.right) && helper(left.right, right.left);
     }
 
     /**
      * 宽度搜索
      */
 
-    public boolean isSymmtric1(TreeNode root)
-    {
+    public boolean isSymmtric1(TreeNode root) {
         if (root == null) return true;
         LinkedList<TreeNode> q = new LinkedList<>();
         q.add(root.left);
         q.add(root.right);
 
-        TreeNode left,right;
-        while(q.size() > 1)
-        {
+        TreeNode left, right;
+        while (q.size() > 1) {
             left = q.pop();
             right = q.pop();
 

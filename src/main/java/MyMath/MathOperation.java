@@ -8,19 +8,19 @@ public class MathOperation {
 
         int a = 3;
         int b = 5;
-        System.out.println(add(a,b));
+        System.out.println(add(a, b));
 
-        System.out.println(minus(3,5));
-        System.out.println(multi(3,5));
+        System.out.println(minus(3, 5));
+        System.out.println(multi(3, 5));
 
     }
 
     // 位运算实现加法
-    public static int add(int a,int b){
+    public static int add(int a, int b) {
         int sum = a;
 
         // 进位运算 可能 还有进位，所以需要循环
-        while (b != 0){
+        while (b != 0) {
             // 不进位的加法使用 或运算
             sum = a ^ b;
             // 进位 使用 & 运算 再向左移一位
@@ -32,16 +32,17 @@ public class MathOperation {
 
     /**
      * 减法 实现 a - b 实现方式是  a + (- b)
+     *
      * @param a
      * @param b
      * @return
      */
-   public static int  minus(int a,int b){
-      return  add(a,negNum(b));
-   }
+    public static int minus(int a, int b) {
+        return add(a, negNum(b));
+    }
 
     // 获取相反数 ~n=-(n + 1)
-    public static  int negNum(int n) {
+    public static int negNum(int n) {
         return add(~n, 1);
     }
 
@@ -67,7 +68,7 @@ public class MathOperation {
 
     // 除法
     public static int div(int a, int b) {
-       // 负数 转化为正数
+        // 负数 转化为正数
         int x = isNeg(a) ? negNum(a) : a;
         int y = isNeg(b) ? negNum(b) : b;
         int res = 0;

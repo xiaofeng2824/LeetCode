@@ -54,11 +54,11 @@ import utils.ListNode;
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
 
@@ -88,53 +88,53 @@ public class MergeKLists {
         head3.next = node5;
 
 
-        ListNode[] arr = {head1,head2,head3};
+        ListNode[] arr = {head1, head2, head3};
 
         ListNode node = mergeKLists(arr);
 
         // 打印链表
-        while(node != null){
-            System.out.print(node.val+"->");
+        while (node != null) {
+            System.out.print(node.val + "->");
             node = node.next;
         }
 
     }
 
 
-    public static  ListNode mergeKLists(ListNode[] lists) {
+    public static ListNode mergeKLists(ListNode[] lists) {
 
-        if (lists == null || lists.length == 0 ){
+        if (lists == null || lists.length == 0) {
             return null;
         }
 
         // 分而治之
-        return merge(lists,0,lists.length - 1);
+        return merge(lists, 0, lists.length - 1);
     }
 
-    public static ListNode merge(ListNode[] list,int left,int right){
+    public static ListNode merge(ListNode[] list, int left, int right) {
 
         // 单个链表直接返回
         if (left == right) return list[left];
 
-        int mid = left + (right - left)/2;
+        int mid = left + (right - left) / 2;
         // 左半边 合并成一个链表
-        ListNode l1 = merge(list,left,mid);
+        ListNode l1 = merge(list, left, mid);
         // 右半边 合并成一个链表
-        ListNode l2 = merge(list,mid+1,right);
+        ListNode l2 = merge(list, mid + 1, right);
         // 两个链表 合并成一个链表
-        return  mergeTwoList(l1,l2);
+        return mergeTwoList(l1, l2);
     }
 
     // 两个有序链表合并
-    public static ListNode  mergeTwoList(ListNode l1,ListNode l2){
-        if (l1 == null) return  l2;
-        if (l2 == null) return  l1;
+    public static ListNode mergeTwoList(ListNode l1, ListNode l2) {
+        if (l1 == null) return l2;
+        if (l2 == null) return l1;
 
-        if (l1.val < l2.val){
-            l1.next = mergeTwoList(l1.next,l2);
-            return  l1;
-        }else {
-            l2.next = mergeTwoList(l1,l2.next);
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoList(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoList(l1, l2.next);
             return l2;
         }
 

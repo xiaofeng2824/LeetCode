@@ -14,26 +14,26 @@ public class PrimeNumber {
         printPrimeNumber(num);
     }
 
-    public static  void printPrimeNumber(int num){
+    public static void printPrimeNumber(int num) {
 
         // 判断是否是质数
-        if(isPrime(num)){
+        if (isPrime(num)) {
             System.out.print(num + " ");
         }
 
-        for(int i=2;i<= Math.sqrt(num);i++){
+        for (int i = 2; i <= Math.sqrt(num); i++) {
             int a = num % i;
 
-            if(a == 0 && isPrime(i)){
+            if (a == 0 && isPrime(i)) {
                 System.out.print(i + " ");
-                printPrimeNumber(num/i);
+                printPrimeNumber(num / i);
                 break;
             }
         }
     }
 
     //  判断一个数是否是质数
-    public static boolean isPrime(int n){
+    public static boolean isPrime(int n) {
         if (n <= 1) return false; // 质数定义要求大于1
         if (n == 2) return true;  // 2是质数
         if (n % 2 == 0) return false; // 偶数（除2外）不是质数

@@ -80,7 +80,7 @@ public class CalculateTreeNode {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] tmp = sc.nextLine().split(" ");
-        int n=tmp.length;
+        int n = tmp.length;
         int[] mid = new int[n];
         int[] pre = new int[n];
         for (int i = 0; i < n; ++i) mid[i] = Integer.parseInt(tmp[i]);

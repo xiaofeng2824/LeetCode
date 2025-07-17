@@ -36,14 +36,14 @@ import utils.ListNode;
 * */
 
 /*
-* 思路：设置快慢两个指针 都从同一节点head出发
-*       慢指针每次只走一步，快指针每次走两步
-*       如果有环，则两个指针必然在某个节点相遇
-* */
+ * 思路：设置快慢两个指针 都从同一节点head出发
+ *       慢指针每次只走一步，快指针每次走两步
+ *       如果有环，则两个指针必然在某个节点相遇
+ * */
 public class CycleList {
     public boolean hasCycle(ListNode head) {
         //如果该链表没有节点或者只有一个节点 则没有环
-        if(head == null || head.next == null)
+        if (head == null || head.next == null)
             return false;
 
         //设置一个慢指针
@@ -51,15 +51,14 @@ public class CycleList {
         //设置一个快指针
         ListNode faster = head;
 
-        while(faster.next != null && faster.next.next != null)
-        {
+        while (faster.next != null && faster.next.next != null) {
             slow = slow.next;
             faster = faster.next.next;
 
-            if(slow == faster)
+            if (slow == faster)
                 return true;
         }
 
-            return false;
+        return false;
     }
 }

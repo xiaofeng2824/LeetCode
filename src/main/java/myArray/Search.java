@@ -52,16 +52,16 @@ public class Search {
 
     public static void main(String[] args) {
 
-        int[] nums = {4,5,6,7,0,1,2};
-        int[] nums2 = {4,5,6,7,8,0,1,2};
-        int[] nums4 = {1,2,3,4,5,6,7,8};
+        int[] nums = {4, 5, 6, 7, 0, 1, 2};
+        int[] nums2 = {4, 5, 6, 7, 8, 0, 1, 2};
+        int[] nums4 = {1, 2, 3, 4, 5, 6, 7, 8};
 
         int[] nums3 = {1};
 
         // O(n) 的写法
-        System.out.println(search(nums,0));
-        System.out.println(search(nums2,3));
-        System.out.println(search(nums3,0));
+        System.out.println(search(nums, 0));
+        System.out.println(search(nums2, 3));
+        System.out.println(search(nums3, 0));
 
         // 测试 数组中最小值下标
 //        System.out.println(minValue(nums,0,nums.length - 1));
@@ -73,10 +73,9 @@ public class Search {
         // 测试有序数组中找到 target value
 //        System.out.println(searchTargetValue(nums4,0,nums4.length-1,5));
 
-        System.out.println(search2(nums,0));
-        System.out.println(search2(nums2,3));
-        System.out.println(search2(nums3,0));
-
+        System.out.println(search2(nums, 0));
+        System.out.println(search2(nums2, 3));
+        System.out.println(search2(nums3, 0));
 
 
     }
@@ -85,10 +84,10 @@ public class Search {
     public static int search(int[] nums, int target) {
         int index = -1;
 
-        for (int i=0;i<nums.length ;i++){
-           if (nums[i] == target){
-               return i;
-           }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == target) {
+                return i;
+            }
         }
 
         return index;
@@ -98,52 +97,52 @@ public class Search {
 
     public static int search2(int[] nums, int target) {
 
-        if (nums.length == 1){
-            return  nums[0] == target ? 0 : -1;
+        if (nums.length == 1) {
+            return nums[0] == target ? 0 : -1;
         }
 
         // 先要找到 k值  最小值的位置
         int minIndex = minValue(nums, 0, nums.length - 1);
 
-        int leftMinIndex = searchTargetValue(nums,0,minIndex,target);
-        int rightMinIndex = searchTargetValue(nums,minIndex, nums.length ,target);
+        int leftMinIndex = searchTargetValue(nums, 0, minIndex, target);
+        int rightMinIndex = searchTargetValue(nums, minIndex, nums.length, target);
 
 
         return leftMinIndex == -1 ? rightMinIndex : leftMinIndex;
     }
 
     // 数组中找到目标值 target
-    public static int searchTargetValue(int[] nums,int left,int right,int target){
+    public static int searchTargetValue(int[] nums, int left, int right, int target) {
 
-         if (left == right){
-             return  -1;
-         }
-
-        int mid = (left + right)/2;
-
-        if (nums[mid] == target){
-            return  mid;
+        if (left == right) {
+            return -1;
         }
 
-        if (nums[mid] < target){
-            return  searchTargetValue(nums,mid + 1,right,target);
-        }else {
-            return  searchTargetValue(nums,left,mid,target);
+        int mid = (left + right) / 2;
+
+        if (nums[mid] == target) {
+            return mid;
+        }
+
+        if (nums[mid] < target) {
+            return searchTargetValue(nums, mid + 1, right, target);
+        } else {
+            return searchTargetValue(nums, left, mid, target);
         }
 
     }
 
     // 返回最小值的下标
-    public static int minValue(int[] nums,int left,int right){
+    public static int minValue(int[] nums, int left, int right) {
 
         // 递归出口
-        if (left == right){
+        if (left == right) {
             return left;
         }
 
-        int mid = (left + right)/2 ;
-        int leftMinIndex = minValue(nums,left,mid);
-        int rightMinIndex = minValue(nums,mid + 1,right);
+        int mid = (left + right) / 2;
+        int leftMinIndex = minValue(nums, left, mid);
+        int rightMinIndex = minValue(nums, mid + 1, right);
 
         return nums[leftMinIndex] < nums[rightMinIndex] ? leftMinIndex : rightMinIndex;
 

@@ -17,16 +17,16 @@ import java.util.Arrays;
  * 500
  * 500 之间的随机整数，你需要帮助他完成以下任务：
  * ∙
- *
+ * <p>
  * ∙删去重复的数字，即相同的数字只保留一个，把其余相同的数去掉；
  * ∙
- *
+ * <p>
  * ∙然后再把这些数从小到大排序，按照排好的顺序输出。
  * 你只需要输出最终的排序结果。
  * 输入描述：
  * 第一行输入一个整数
  * n
- *
+ * <p>
  * (
  * 1
  * ≦
@@ -42,7 +42,7 @@ import java.util.Arrays;
  * i 行输入一个整数
  * a
  * i
- *
+ * <p>
  * (
  * 1
  * ≦
@@ -54,10 +54,10 @@ import java.util.Arrays;
  * a
  * i
  * ​
- *   (1≦a
+ * (1≦a
  * i
  * ​
- *  ≦500)，代表明明生成的随机整数。
+ * ≦500)，代表明明生成的随机整数。
  * 输出描述：
  * 输出若干行，每行输出一个整数，代表输入数据排序后的结果。第一行输出最小的数字。
  */
@@ -75,13 +75,13 @@ public class RandomNum {
         randomNum(nums);
     }
 
-    public static void randomNum(List<Integer> nums){
+    public static void randomNum(List<Integer> nums) {
 
-        if(nums == null || nums.size() == 0) return;
+        if (nums == null || nums.size() == 0) return;
 
         HashSet<Integer> numSet = new HashSet<Integer>();
 
-        for(Integer num : nums){
+        for (Integer num : nums) {
             numSet.add(num);
         }
 
@@ -90,7 +90,7 @@ public class RandomNum {
 
         Arrays.sort(numArr);
 
-        for(Integer num : numArr){
+        for (Integer num : numArr) {
             System.out.println(num);
         }
     }

@@ -10,8 +10,9 @@ import java.util.List;
 public class StableMountains {
 
     public static void main(String[] args) {
-        int[] height = {10,1,10,1,10}; int threshold = 3;
-        System.out.println(stableMountains(height,threshold));
+        int[] height = {10, 1, 10, 1, 10};
+        int threshold = 3;
+        System.out.println(stableMountains(height, threshold));
     }
 
 
@@ -20,11 +21,11 @@ public class StableMountains {
         List<Integer> res = new ArrayList<>();
         if (height == null || height.length < 2) return res;
 
-        for (int i=1;i<height.length;i++){
-            if (height[i-1] > threshold){
+        for (int i = 1; i < height.length; i++) {
+            if (height[i - 1] > threshold) {
                 res.add(i);
             }
         }
-        return  res;
+        return res;
     }
 }

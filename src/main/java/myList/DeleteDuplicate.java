@@ -7,18 +7,14 @@ import utils.ListNode;
  */
 public class DeleteDuplicate {
 
-    public ListNode delete(ListNode head)
-    {
-        if(head == null || head.next == null) return  head;
+    public ListNode delete(ListNode head) {
+        if (head == null || head.next == null) return head;
         //当前节点
         ListNode current = head;
-        while(current.next != null)
-        {
-            if (current.val == current.next.val)
-            {
+        while (current.next != null) {
+            if (current.val == current.next.val) {
                 current.next = current.next.next;
-            }else
-            {
+            } else {
                 current = current.next;
             }
         }

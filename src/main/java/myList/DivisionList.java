@@ -12,10 +12,10 @@ public class DivisionList {
 
         ListNode testData = ListNode.createTestData("[2,4,9,7,3,4,5,6]");
         ListNode.print(testData);
-        ListNode.print(divisionList(testData,5));
+        ListNode.print(divisionList(testData, 5));
     }
 
-    public static ListNode divisionList(ListNode head,int x){
+    public static ListNode divisionList(ListNode head, int x) {
 
         if (head == null || head.next == null) return head;
 

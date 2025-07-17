@@ -7,7 +7,7 @@ import java.util.Comparator;
 import java.util.TreeSet;
 
 /**
- *https://leetcode.cn/problems/closest-room/description/
+ * https://leetcode.cn/problems/closest-room/description/
  * 最近的房间
  */
 public class ClosestRoom {
@@ -77,8 +77,8 @@ public class ClosestRoom {
 
         for (int i = 0; i < queries.length; i++) {
             int[] query = queries[i];
-            int preferredj =  query[0];
-            int minSize =  query[1];
+            int preferredj = query[0];
+            int minSize = query[1];
 
             int min = Integer.MAX_VALUE;
             int minIndex = -1;
@@ -88,19 +88,19 @@ public class ClosestRoom {
                 int index = room[0];
                 int roomSize = room[1];
 
-                if (roomSize >= minSize){
-                  int abs = Math.abs(index - preferredj);
-                  if (abs < min){
-                      min = abs;
-                      minIndex = index;
-                  }else if (abs == min){
-                      min = abs;
-                      minIndex = minIndex < index ? minIndex : index;
-                  }
+                if (roomSize >= minSize) {
+                    int abs = Math.abs(index - preferredj);
+                    if (abs < min) {
+                        min = abs;
+                        minIndex = index;
+                    } else if (abs == min) {
+                        min = abs;
+                        minIndex = minIndex < index ? minIndex : index;
+                    }
                 }
             }
             res[i] = minIndex;
         }
-        return  res;
+        return res;
     }
 }

@@ -27,19 +27,19 @@ public class SumOfTwoNum {
     public static int add(int a, int b) {
         int sum = a;
 
-        while(b != 0){
-          // 异或 处理 加法
-          sum = a ^ b;
-          // 处理进位
-          b = (a & b) << 1;
-          a = sum;
+        while (b != 0) {
+            // 异或 处理 加法
+            sum = a ^ b;
+            // 处理进位
+            b = (a & b) << 1;
+            a = sum;
         }
         return sum;
     }
 
     //
     public static void main(String[] args) {
-        System.out.println("1 + 2 = "+add(1,2));
-        System.out.println("2 + 3 = "+add(2,3));
+        System.out.println("1 + 2 = " + add(1, 2));
+        System.out.println("2 + 3 = " + add(2, 3));
     }
 }

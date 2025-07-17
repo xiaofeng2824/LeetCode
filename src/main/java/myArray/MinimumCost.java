@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class MinimumCost {
 
     public static void main(String[] args) {
-      int  m = 3, n = 2; int[] horizontalCut = {1,3}, verticalCut = {5};
-        System.out.println(minimumCost(m,n,horizontalCut,verticalCut));
+        int m = 3, n = 2;
+        int[] horizontalCut = {1, 3}, verticalCut = {5};
+        System.out.println(minimumCost(m, n, horizontalCut, verticalCut));
     }
 
     public static long minimumCost(int m, int n, int[] horizontalCut, int[] verticalCut) {

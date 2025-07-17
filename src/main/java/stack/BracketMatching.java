@@ -4,32 +4,25 @@ import java.util.Stack;
 
 /**
  * 判断括号是否匹配
- *
  */
 public class BracketMatching {
 
-    public static boolean isValid(String s)
-    {
+    public static boolean isValid(String s) {
         //使用数组来模拟栈 大小即为字符串的大小
-        char[] stack = new char[s.length() - 1 ];
+        char[] stack = new char[s.length() - 1];
         int top = 0;
 
         //遍历字符串转化的数组
-        for(char c :s.toCharArray())
-        {
+        for (char c : s.toCharArray()) {
             //左括号 入栈
-            if (c == '(' || c == '[' || c == '{')
-            {
+            if (c == '(' || c == '[' || c == '{') {
                 stack[top++] = c;
                 //这种方式判断比较高效
-            }else if(c == ')' && stack[--top] != '(')
-            {
+            } else if (c == ')' && stack[--top] != '(') {
                 return false;
-            }else if (c == ']' && stack[--top] != '[')
-            {
+            } else if (c == ']' && stack[--top] != '[') {
                 return false;
-            }else if (c == '}' && stack[--top] != '{')
-            {
+            } else if (c == '}' && stack[--top] != '{') {
                 return false;
             }
         }
@@ -45,16 +38,16 @@ public class BracketMatching {
 
         char[] chars = s.toCharArray();
 
-        for (char a : chars){
-            if (a == '(' || a == '{' || a == '['){
+        for (char a : chars) {
+            if (a == '(' || a == '{' || a == '[') {
                 stack.push(a);
-            }else if (
-                           stack.isEmpty()
-                            ||    (a == ')'   && (char)stack.pop() != '(')
-                            ||  (a == ']'  && (char)stack.pop() != '[')
-                            ||  (a == '}'  && (char)stack.pop() != '{')
-            ){
-                return  false;
+            } else if (
+                    stack.isEmpty()
+                            || (a == ')' && (char) stack.pop() != '(')
+                            || (a == ']' && (char) stack.pop() != '[')
+                            || (a == '}' && (char) stack.pop() != '{')
+            ) {
+                return false;
             }
         }
 

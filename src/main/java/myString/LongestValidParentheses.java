@@ -57,8 +57,8 @@ public class LongestValidParentheses {
         String s = "()(()";
         int max = longestValidParentheses(s);
         int max2 = longestValidParentheses2(s);
-        System.out.println("max :"+max);
-        System.out.println("max2 :"+max2);
+        System.out.println("max :" + max);
+        System.out.println("max2 :" + max2);
 
     }
 
@@ -66,7 +66,7 @@ public class LongestValidParentheses {
     public static int longestValidParentheses(String s) {
 
         // 边界值处理
-        if (s == null || s == ""){
+        if (s == null || s == "") {
             return 0;
         }
         char[] chars = s.toCharArray();
@@ -76,17 +76,17 @@ public class LongestValidParentheses {
 
         // 记录上次正确括号的位置
         int index = -1;
-        for (int i=0;i<chars.length;i++){
+        for (int i = 0; i < chars.length; i++) {
 
             char a = chars[i];
-            if (a == '('){
+            if (a == '(') {
                 stack.push(a);
-            }else if (a == ')' && !stack.isEmpty() ){
-                char b  = (char)stack.pop();
+            } else if (a == ')' && !stack.isEmpty()) {
+                char b = (char) stack.pop();
                 // 匹配到了括号
-                if (  b == '(' ){
+                if (b == '(') {
                     tmpMax += 2;
-                }else {
+                } else {
                     stack.push(b);
                     stack.push(a);
                     // 临时变量 tmpMax 清零
@@ -94,7 +94,7 @@ public class LongestValidParentheses {
                 }
                 max = tmpMax > max ? tmpMax : max;
 
-            }else {
+            } else {
                 tmpMax = 0;
             }
         }
@@ -103,20 +103,20 @@ public class LongestValidParentheses {
     }
 
     // 暂时没搞懂
-    public static  int longestValidParentheses2(String s) {
-        int max=0;//存放最大的长度
-        int len=s.length();//字符串长度
-        Stack<Integer> stack=new Stack<Integer>();//暂存字符
+    public static int longestValidParentheses2(String s) {
+        int max = 0;//存放最大的长度
+        int len = s.length();//字符串长度
+        Stack<Integer> stack = new Stack<Integer>();//暂存字符
         stack.push(-1);//初始化栈底
-        for(int i=0;i<len;i++) {//遍历字符串
-            if(s.charAt(i)=='(')//字符串存在（
+        for (int i = 0; i < len; i++) {//遍历字符串
+            if (s.charAt(i) == '(')//字符串存在（
                 stack.push(i);//下标入栈
             else {//只有右边
                 stack.pop();//下标出栈
-                if(stack.isEmpty()) {//出栈以后，栈为空
+                if (stack.isEmpty()) {//出栈以后，栈为空
                     stack.push(i);//让当前下标进栈
-                }else {//不为空，就计算长度差值
-                    max=Math.max(max, i-stack.peek());//选出最长的长度
+                } else {//不为空，就计算长度差值
+                    max = Math.max(max, i - stack.peek());//选出最长的长度
                 }
             }
         }

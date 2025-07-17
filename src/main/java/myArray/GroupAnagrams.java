@@ -35,11 +35,11 @@ public class GroupAnagrams {
         List<List<String>> lists = groupAnagrams(strs);
         System.out.println();
 
-        for (List<String> strList : lists ){
+        for (List<String> strList : lists) {
 
             System.out.println("[");
-            for (String str : strList){
-                System.out.print(str +" ");
+            for (String str : strList) {
+                System.out.print(str + " ");
             }
             System.out.println("]");
 
@@ -53,26 +53,26 @@ public class GroupAnagrams {
 
         List<List<String>> res = new ArrayList<>();
 
-        Map<String,List<String>>  strMap = new HashMap<>();
+        Map<String, List<String>> strMap = new HashMap<>();
 
-        for (String str : strs){
+        for (String str : strs) {
 
             char[] chars = str.toCharArray();
             Arrays.sort(chars);
 
             String s = String.valueOf(chars);
 
-            if (strMap.containsKey(s)){
+            if (strMap.containsKey(s)) {
                 List<String> strList = strMap.get(s);
                 strList.add(str);
-            }else {
+            } else {
                 List<String> list = new ArrayList<>();
                 list.add(str);
-                strMap.put(s,list);
+                strMap.put(s, list);
             }
         }
 
-        for (String key : strMap.keySet()){
+        for (String key : strMap.keySet()) {
             res.add(strMap.get(key));
         }
 

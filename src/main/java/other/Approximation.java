@@ -10,19 +10,19 @@ public class Approximation {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // 注意 hasNext 和 hasNextLine 的区别
-        float num =  in.nextFloat();
+        float num = in.nextFloat();
 
         float xiaoshu = num;
 
         int zhengshu = 0;
-        while(xiaoshu > 1){
+        while (xiaoshu > 1) {
             zhengshu++;
             xiaoshu = num - zhengshu;
         }
 
-        if(xiaoshu >= 0.5){
+        if (xiaoshu >= 0.5) {
             System.out.print(++zhengshu);
-        }else{
+        } else {
             System.out.print(zhengshu);
         }
 

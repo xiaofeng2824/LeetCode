@@ -1,7 +1,6 @@
 package myArray;
 
 
-
 import java.util.HashMap;
 
 /*
@@ -28,17 +27,14 @@ public class twoNum {
 
     //解法1：遍历两次  arr[i] + arr[j] == target
     //时间复杂度：O(n) = n^2
-    public static int[] twonum(int[] nums,int target)
-    {
-        for(int i=0;i<nums.length;i++)
-        {
-            for (int j =i+1;j<nums.length;j++)
-            {
-                if(nums[i] + nums[j] == target)
-                    return new int[] {i,j};
+    public static int[] twonum(int[] nums, int target) {
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target)
+                    return new int[]{i, j};
             }
         }
-        Thread t1 = new Thread(()->{
+        Thread t1 = new Thread(() -> {
             System.out.println("hello");
         });
         t1.isInterrupted();
@@ -49,23 +45,20 @@ public class twoNum {
 
     //解法2
     /*
-    * 使用hashmap来存储   键为目标值减去当前元素值，索引为值
-    * 存储之前首先判断nums[0] 是否在map中,如果不存在则存储在map中
-    * 时间复杂度为： O(n) = n
-    * */
+     * 使用hashmap来存储   键为目标值减去当前元素值，索引为值
+     * 存储之前首先判断nums[0] 是否在map中,如果不存在则存储在map中
+     * 时间复杂度为： O(n) = n
+     * */
 
 
-    public static int[] twonum2(int[] nums, int target)
-    {
+    public static int[] twonum2(int[] nums, int target) {
         int len = nums.length;
-        HashMap<Integer,Integer> map = new HashMap<>();
-        for(int i=0;i<len;i++)
-        {
-            if(map.containsKey(nums[i]))
-            {
-                return  new int[] {map.get(nums[i]),i};
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < len; i++) {
+            if (map.containsKey(nums[i])) {
+                return new int[]{map.get(nums[i]), i};
             }
-            map.put(target-nums[i],i);
+            map.put(target - nums[i], i);
         }
 
         return null;

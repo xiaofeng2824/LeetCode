@@ -10,11 +10,10 @@ import java.util.Map;
 public class MinValidStringsII {
 
 
-
     public static void main(String[] args) {
-        String[] words = {"abc","aaaaa","bcdef"};
+        String[] words = {"abc", "aaaaa", "bcdef"};
         String target = "aabcdabc";
-        System.out.println(minValidStrings(words,target));
+        System.out.println(minValidStrings(words, target));
     }
 
     public static int minValidStrings(String[] words, String target) {

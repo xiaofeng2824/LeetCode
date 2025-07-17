@@ -5,16 +5,15 @@ package myString;
  */
 public class LengthOfLastWord {
 
-    public int lengthOfLastWord(String s)
-    {
+    public int lengthOfLastWord(String s) {
         //字符串长度
-        int p = s.length()-1;
+        int p = s.length() - 1;
 
         //最后一个单词的最后一个字母
-        while(p >=0 && s.charAt(p) == ' ') p--;
+        while (p >= 0 && s.charAt(p) == ' ') p--;
         int end = p;
         //最后一个单词的第一个字母
-        while(p >=0 && s.charAt(p) != ' ') p--;
+        while (p >= 0 && s.charAt(p) != ' ') p--;
         return end - p;
 
     }

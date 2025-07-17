@@ -22,20 +22,18 @@ import utils.TreeNode;
 public class DepthOfTree {
 
 
-
     //求树的深度
-    public static  int maxDepth(TreeNode root) {
+    public static int maxDepth(TreeNode root) {
 
         //递归遍历树，求树的深度
 
-        if(root == null)
+        if (root == null)
             return 0;
-        else
-        {
+        else {
             //int leftdepth  = 1 + maxDepth(root.left);
             //int rightdepth = 1 + maxDepth(root.right);
-            return  maxDepth(root.left) > maxDepth(root.right)?
-                    maxDepth(root.left) + 1 :maxDepth(root.right) + 1;
+            return maxDepth(root.left) > maxDepth(root.right) ?
+                    maxDepth(root.left) + 1 : maxDepth(root.right) + 1;
         }
 
         /*

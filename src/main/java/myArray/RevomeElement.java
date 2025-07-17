@@ -6,13 +6,10 @@ package myArray;
  */
 public class RevomeElement {
 
-    public static int removeElement(int[] arr,int value)
-    {
+    public static int removeElement(int[] arr, int value) {
         int tail = 0;
-        for (int i = 0;i < arr.length;i++)
-        {
-            if (value != arr[i])
-            {
+        for (int i = 0; i < arr.length; i++) {
+            if (value != arr[i]) {
                 arr[tail++] = arr[i];
             }
         }

@@ -65,8 +65,8 @@ public class RegexMatch {
 
 
     public static void main(String[] args) {
-        
-        String s = "aa",p="a";
+
+        String s = "aa", p = "a";
         //String s = "mississippi",p="mis*is*p*.";
         boolean match = isMatch(s, p);
         System.out.println(match);
@@ -86,7 +86,7 @@ public class RegexMatch {
         boolean match = (s.length() > 0 && (s.charAt(0) == p.charAt(0) || p.charAt(0) == '.'));
 
 
-        if (p.length() > 1 && p.charAt(1) == '*'){
+        if (p.length() > 1 && p.charAt(1) == '*') {
             // *号  但是 s中不出现                    s 中出现了p中字符
             return isMatch(s, p.substring(2)) || (match && isMatch(s.substring(1), p));
         } else {

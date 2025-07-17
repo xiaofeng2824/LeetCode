@@ -45,15 +45,15 @@ public class MergeRange {
 
     public static void main(String[] args) {
 
-        int[][] intervals = {{1,3},{2,6},{8,10},{15,18}};
+        int[][] intervals = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
 
 
         System.out.print("[");
-        for (int i=0;i<intervals.length;i++){
+        for (int i = 0; i < intervals.length; i++) {
 
             System.out.print("[");
-            for (int j=0;j<intervals[i].length ;j++){
-                System.out.print(intervals[i][j]+",");
+            for (int j = 0; j < intervals[i].length; j++) {
+                System.out.print(intervals[i][j] + ",");
             }
             System.out.print("]");
         }
@@ -65,34 +65,34 @@ public class MergeRange {
     public int[][] merge(int[][] intervals) {
 
         // 边界值处理
-        if(intervals == null || intervals.length<=1)
+        if (intervals == null || intervals.length <= 1)
             return intervals;
 
         List<int[]> list = new ArrayList<>();
         //Arrays.sort(arr,(a,b)->a[0]-b[0]);
         // 对数组进行排序
-        Arrays.sort(intervals,new Comparator<int[]>(){
+        Arrays.sort(intervals, new Comparator<int[]>() {
             @Override
-            public int compare(int[] a,int[] b){
-                return a[0]-b[0];
+            public int compare(int[] a, int[] b) {
+                return a[0] - b[0];
             }
         });
 
-        int i=0;
+        int i = 0;
         int n = intervals.length;
-        while(i<n){
+        while (i < n) {
             // 子数组左值
             int left = intervals[i][0];
             // 子数组右值
             int right = intervals[i][1];
 
             // 有越界
-            while(i < n-1 && right >= intervals[i+1][0]){
+            while (i < n - 1 && right >= intervals[i + 1][0]) {
                 // 判断下一个数组中 右值与 上一个数组中右值谁大
-                right = Math.max(right,intervals[i+1][1]);
+                right = Math.max(right, intervals[i + 1][1]);
                 i++;
             }
-            list.add(new int[] {left,right});
+            list.add(new int[]{left, right});
             i++;
         }
         return list.toArray(new int[list.size()][2]);

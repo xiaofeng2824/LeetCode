@@ -10,7 +10,7 @@ import java.util.Arrays;
  * 如果我们选择逆序，这样利用 `nums1` 自身空间足矣，
  * 不会出现覆盖的情况，依次把大的元素插入到 `nums1` 的末尾，
  * 确保 `nums2` 中的元素全部插入到 `nums1` 即可
- *
+ * <p>
  * Input:
  * nums1 = [1,2,3,0,0,0], m = 3
  * nums2 = [2,5,6],       n = 3
@@ -18,15 +18,12 @@ import java.util.Arrays;
  */
 public class MergeArray {
     //合并两个有序数组
-    public int[] merge(int[] nums1,int m,int[] nums2,int n)
-    {
+    public int[] merge(int[] nums1, int m, int[] nums2, int n) {
         int p = m-- + n-- - 1;
-        while(m >= 0 && n >= 0)
-        {
-            nums1[p--] = nums1[m] > nums2[n]? nums1[m--]:nums2[n--];
+        while (m >= 0 && n >= 0) {
+            nums1[p--] = nums1[m] > nums2[n] ? nums1[m--] : nums2[n--];
         }
-        while(n >= 0)
-        {
+        while (n >= 0) {
             nums1[p--] = nums2[n--];
         }
 
@@ -45,8 +42,8 @@ public class MergeArray {
         for (int i = 0; i < 5; ++i) {
             nums2[i] = 2 * i + 1;
         }
-        System.out.println("nums1: "+Arrays.toString(nums1));
-        System.out.println("nums2: "+Arrays.toString(nums2));
+        System.out.println("nums1: " + Arrays.toString(nums1));
+        System.out.println("nums2: " + Arrays.toString(nums2));
         mergeArray.merge(nums1, 5, nums2, 5);
         System.out.println(Arrays.toString(nums1));
     }

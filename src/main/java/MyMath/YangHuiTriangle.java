@@ -30,8 +30,7 @@ public class YangHuiTriangle {
         YangHuiTriangle solution = new YangHuiTriangle();
         List<List<Integer>> generate = solution.generate(5);
 
-        for (List<Integer> list :generate)
-        {
+        for (List<Integer> list : generate) {
             System.out.println(list);
         }
     }

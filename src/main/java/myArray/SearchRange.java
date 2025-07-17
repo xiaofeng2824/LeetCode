@@ -51,7 +51,7 @@ public class SearchRange {
 
     public static void main(String[] args) {
 
-       int[] arr = {5,7,7,8,8,10};
+        int[] arr = {5, 7, 7, 8, 8, 10};
 //        int[] arr = {1};
 
         // 对照组
@@ -61,7 +61,7 @@ public class SearchRange {
         System.out.println(Arrays.toString(searchRange2(arr, 8)));
 
 
-         int[] arr1 = {1};
+        int[] arr1 = {1};
 
         // 对照组
         System.out.println(Arrays.toString(searchRange(arr1, 1)));
@@ -70,7 +70,7 @@ public class SearchRange {
         System.out.println(Arrays.toString(searchRange2(arr1, 1)));
 
 
-        int[] arr2 = {1,2,3,3,3,3,4,5,9};
+        int[] arr2 = {1, 2, 3, 3, 3, 3, 4, 5, 9};
 
         // 对照组
         System.out.println(Arrays.toString(searchRange(arr2, 3)));
@@ -79,60 +79,58 @@ public class SearchRange {
         System.out.println(Arrays.toString(searchRange2(arr2, 3)));
 
 
-
-
     }
 
     // 二分查找
     public static int[] searchRange2(int[] nums, int target) {
 
-        int[] res = {-1,-1};
+        int[] res = {-1, -1};
 
-        if (nums == null || nums.length == 0 ){
+        if (nums == null || nums.length == 0) {
             return res;
         }
         // 二分查找
-         res = searchTargetValue(nums, 0, nums.length - 1, target);
+        res = searchTargetValue(nums, 0, nums.length - 1, target);
 
 
         return res;
     }
 
     // 数组中找到目标值 target
-    public static int[] searchTargetValue(int[] nums,int left,int right,int target){
+    public static int[] searchTargetValue(int[] nums, int left, int right, int target) {
 
-        int[] res = {-1,-1};
-        if ( nums[left] == target && nums[right] == target){
+        int[] res = {-1, -1};
+        if (nums[left] == target && nums[right] == target) {
             res[0] = left;
             res[1] = right;
-            return  res;
-        }else if(left == right){
-            return  res;
+            return res;
+        } else if (left == right) {
+            return res;
         }
 
-        int mid = (left + right)/2;
+        int mid = (left + right) / 2;
 
-        if (nums[mid] == target){
+        if (nums[mid] == target) {
             int[] leftArr = searchTargetValue(nums, left, mid, target);
             int[] rightArr = searchTargetValue(nums, mid + 1, right, target);
 
             //全在左边
-            if (rightArr[0] == -1){
+            if (rightArr[0] == -1) {
                 return leftArr;
                 // 全在右边
-            }else if(leftArr[1] == -1){
-                return  rightArr;
-            }else{
+            } else if (leftArr[1] == -1) {
+                return rightArr;
+            } else {
 
                 res[0] = leftArr[0];
                 res[1] = rightArr[1];
-                return  res;
+                return res;
             }
 
-        }else if (nums[mid] < target){
-            return  searchTargetValue(nums,mid + 1,right,target);
-        }else {
-            return  searchTargetValue(nums,left,mid,target);
+        } else if (nums[mid] < target) {
+            return searchTargetValue(nums, mid + 1, right, target);
+        } else {
+            return searchTargetValue(nums, left, mid, target);
         }
 
     }
@@ -140,31 +138,31 @@ public class SearchRange {
 
     // 对照组
     public static int[] searchRange(int[] nums, int target) {
-        int[] res = {-1,-1};
+        int[] res = {-1, -1};
 
         int p1 = 0;
         int p2 = nums.length - 1;
 
-        while(p1 <= p2){
-            if (nums[p1] == target){
+        while (p1 <= p2) {
+            if (nums[p1] == target) {
                 break;
-            }else {
+            } else {
                 p1++;
             }
         }
 
-        while(p1 <= p2){
-            if (nums[p2] == target){
+        while (p1 <= p2) {
+            if (nums[p2] == target) {
                 break;
-            }else {
+            } else {
                 p2--;
             }
         }
 
-        if (p1 > p2){
-            return  res;
-        }else{
-            return new int[]{p1,p2};
+        if (p1 > p2) {
+            return res;
+        } else {
+            return new int[]{p1, p2};
         }
 
     }

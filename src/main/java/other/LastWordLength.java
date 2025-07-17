@@ -13,7 +13,7 @@ import java.util.Scanner;
  * 3
  * 10
  * 3
- *   。
+ * 。
  * 输出描述：
  * 在一行上输出一个整数，代表最后一个单词的长度。
  */
@@ -23,16 +23,16 @@ public class LastWordLength {
         // 注意 hasNext 和 hasNextLine 的区别
         String word = in.nextLine();
 
-        int count =  wordCount(word);
+        int count = wordCount(word);
         System.out.println(count);
     }
 
-    public static int wordCount(String word){
+    public static int wordCount(String word) {
 
-    // 边界处理
-        if(word == null || word.length() == 0) return 0;
+        // 边界处理
+        if (word == null || word.length() == 0) return 0;
 
-    // 处理单词
+        // 处理单词
         String[] wordArr = word.split(" ");
         String lastWord = wordArr[wordArr.length - 1];
         return lastWord.trim().length();

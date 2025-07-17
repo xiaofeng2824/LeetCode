@@ -6,18 +6,17 @@ import java.util.Map;
 
 /**
  * https://leetcode.cn/problems/minimum-number-of-valid-strings-to-form-target-i/
- *
- *
  */
 public class MinValidStringsI {
 
     public static void main(String[] args) {
 
-      String[] words = {"abc","aaaaa","bcdef"};String target = "aabcdabc";
-      System.out.println(minValidStrings(words,target));
+        String[] words = {"abc", "aaaaa", "bcdef"};
+        String target = "aabcdabc";
+        System.out.println(minValidStrings(words, target));
     }
 
-    public static  int minValidStrings(String[] words, String target) {
+    public static int minValidStrings(String[] words, String target) {
 
         int n = target.length();
 

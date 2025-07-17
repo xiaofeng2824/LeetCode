@@ -10,12 +10,12 @@ public class MaximumLength {
     public static void main(String[] args) {
 
 //        int[] nums = {1,2,3,4};
-        int[] nums = {1,2,1,1,2,1,2};
+        int[] nums = {1, 2, 1, 1, 2, 1, 2};
         System.out.println(maximumLength(nums));
     }
 
     public static int maximumLength(int[] nums) {
-     return maximumLength(nums, 2);
+        return maximumLength(nums, 2);
     }
 
     public static int maximumLength(int[] nums, int k) {

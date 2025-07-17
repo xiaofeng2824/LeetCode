@@ -53,10 +53,10 @@ public class CombinationSum {
 
     public static void main(String[] args) {
 
-        int[] arr = {2,3,6,7};
+        int[] arr = {2, 3, 6, 7};
         List<List<Integer>> lists = combinationSum(arr, 7);
 
-        for (List<Integer> list : lists){
+        for (List<Integer> list : lists) {
             System.out.println(list.toString());
         }
 
@@ -65,42 +65,41 @@ public class CombinationSum {
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
 
-        List<List<Integer>> listAll=new ArrayList<List<Integer>>();
+        List<List<Integer>> listAll = new ArrayList<List<Integer>>();
 
-        List<Integer> list=new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<Integer>();
         //排序
         Arrays.sort(candidates);
 
-        find(listAll,list,candidates,target,0);
+        find(listAll, list, candidates, target, 0);
         return listAll;
     }
 
     /**
-     *
-     * @param listAll  要返回的结果
-     * @param tmp  临时的list
-     * @param candidates  原数组
-     * @param target  还需要的值
-     * @param num    数组的下标
+     * @param listAll    要返回的结果
+     * @param tmp        临时的list
+     * @param candidates 原数组
+     * @param target     还需要的值
+     * @param num        数组的下标
      */
-    public static void find(List<List<Integer>> listAll,List<Integer> tmp,int[] candidates, int target,int num){
+    public static void find(List<List<Integer>> listAll, List<Integer> tmp, int[] candidates, int target, int num) {
 
         //递归的终点
-        if(target==0){
+        if (target == 0) {
             listAll.add(tmp);
             return;
         }
 
         // 因为已经排过序了,如果第0个下标的元素都不满足，那这个序列就不满足了
-        if(target < candidates[0]) return;
+        if (target < candidates[0]) return;
 
-        for(int i=num;i<candidates.length && candidates[i] <= target;i++){
+        for (int i = num; i < candidates.length && candidates[i] <= target; i++) {
             //拷贝一份，不影响下次递归
-            List<Integer> list=new ArrayList<>(tmp);
+            List<Integer> list = new ArrayList<>(tmp);
             list.add(candidates[i]);
 
             //递归运算，将i传递至下一次运算是为了避免结果重复。
-            find(listAll,list,candidates,target-candidates[i],i);
+            find(listAll, list, candidates, target - candidates[i], i);
         }
     }
 }

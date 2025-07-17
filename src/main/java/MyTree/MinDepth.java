@@ -7,18 +7,17 @@ import utils.TreeNode;
  */
 public class MinDepth {
 
-    public int minDepth(TreeNode node)
-    {
-       if (node == null) return 0;
-       return helper(node);
+    public int minDepth(TreeNode node) {
+        if (node == null) return 0;
+        return helper(node);
     }
 
     private int helper(TreeNode node) {
-        if(node == null) return 0;
+        if (node == null) return 0;
         int left = helper(node.left);
         int right = helper(node.right);
 
-        return left < right ? left+1 :right+1;
+        return left < right ? left + 1 : right + 1;
     }
 
     public static void main(String[] args) {

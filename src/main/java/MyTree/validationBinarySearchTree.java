@@ -33,20 +33,20 @@ public class validationBinarySearchTree {
     * */
 
     //验证是否二叉搜索树
-    public static  boolean isValidBST(TreeNode root) {
+    public static boolean isValidBST(TreeNode root) {
         //root结点是空  为true
-        if(root == null)
+        if (root == null)
             return true;
 
-        if(root.left == null && root.val > root.right.val)
+        if (root.left == null && root.val > root.right.val)
             return false;
 
-        if(root.right== null && root.val <root.left.val)
+        if (root.right == null && root.val < root.left.val)
             return false;
 
-        if(root.val < root.left.val || root.val > root.right.val)
-                return false;
+        if (root.val < root.left.val || root.val > root.right.val)
+            return false;
 
-           return  isValidBST(root.left) & isValidBST(root.right);
+        return isValidBST(root.left) & isValidBST(root.right);
     }
 }

@@ -21,23 +21,23 @@ public class MinSetSize {
 
     public static int minSetSize(int[] arr) {
 
-        Map<Integer,Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         for (int i = 0; i < arr.length; i++) {
             Integer value = map.getOrDefault(arr[i], 0);
-            map.put(arr[i],value + 1);
+            map.put(arr[i], value + 1);
         }
 
         List<Integer> collect = map.values().stream().sorted().collect(Collectors.toList());
 
         int count = 0;
         int sum = 0;
-        int halfLength = arr.length /2;
-        for (int i= collect.size() -1; i>=0;i--) {
+        int halfLength = arr.length / 2;
+        for (int i = collect.size() - 1; i >= 0; i--) {
             int value = collect.get(i);
             sum += value;
             count++;
-            if (sum >= halfLength){
+            if (sum >= halfLength) {
                 break;
             }
         }

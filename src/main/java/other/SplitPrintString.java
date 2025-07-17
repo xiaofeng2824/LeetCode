@@ -1,8 +1,8 @@
 package other;
+
 import java.util.Scanner;
 
 /**
- *
  * 描述
  * 对于给定的由小写字母和数字混合构成的字符串
  * s
@@ -10,16 +10,16 @@ import java.util.Scanner;
  * 8
  * 8 个字符换一行的方式书写它，具体地：
  * ∙
- *
+ * <p>
  * ∙书写前8 个字符，换行；
  * ∙
- *
+ * <p>
  * ∙书写接下来的8 个字符，换行；
  * ∙重复上述过程，直到字符串被完全书写。
  * 特别地，如果最后一行不满8
  * 8 个字符，则需要在字符串末尾补充0
  * 0，直到长度为
-
+ * <p>
  * 输入描述：
  * 在一行上输入一个长度
  * 1
@@ -52,22 +52,22 @@ public class SplitPrintString {
         splitPrintString(str);
     }
 
-    public static void splitPrintString(String str){
+    public static void splitPrintString(String str) {
 
         // 边界处理
-        if(str == null || str.length() == 0) return;
+        if (str == null || str.length() == 0) return;
 
         int index = 0;
         int length = str.length();
 
-        while(index < length){
+        while (index < length) {
 
-            if(index + 8 <= length){
-                String subStr = str.substring(index,index + 8);
+            if (index + 8 <= length) {
+                String subStr = str.substring(index, index + 8);
                 System.out.println(subStr);
-            }else{
-                String subStr = str.substring(index,length);
-                subStr = subStr + String.format("%0" +  (8 - subStr.length()) + "d",0);
+            } else {
+                String subStr = str.substring(index, length);
+                subStr = subStr + String.format("%0" + (8 - subStr.length()) + "d", 0);
                 System.out.println(subStr);
             }
             index = index + 8;

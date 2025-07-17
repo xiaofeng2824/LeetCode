@@ -1,20 +1,20 @@
 package myString;
 
 /*
-* **Example 1:**
-* 题目描述：最长回文子串
-*Input: "babad"
-*Output: "bab"
-*Note: "aba" is also a valid answer.
-*Example 2:**
-*Input: "cbbd"
-*Output: "bb"
-*/
+ * **Example 1:**
+ * 题目描述：最长回文子串
+ *Input: "babad"
+ *Output: "bab"
+ *Note: "aba" is also a valid answer.
+ *Example 2:**
+ *Input: "cbbd"
+ *Output: "bb"
+ */
 public class LongestPalindromeSubstring {
 
     /*
-    * 方法一：对每个字符求最长的回文子串
-    */
+     * 方法一：对每个字符求最长的回文子串
+     */
     public static String longestPalindrome(String s) {
         int len = s.length();
         if (len < 2) {

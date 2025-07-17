@@ -1,15 +1,15 @@
 package dp;
 
-public class MaximalSquare{
+public class MaximalSquare {
 
     /**
      * 最大正方形
-     * 
+     * <p>
      * 链接: https://leetcode.cn/problems/maximal-square/?envType=study-plan-v2&envId=dynamic-programming
      */
     public static void main(String[] args) {
 
-        char[][] matrix = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
+        char[][] matrix = {{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}};
         System.out.println(maximalSquare(matrix));
     }
 

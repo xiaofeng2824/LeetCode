@@ -38,18 +38,19 @@ public class ArrayUtils {
         for (int i = 0; i < strArr.length; i++) {
             intArr[i] = Integer.parseInt(strArr[i]);
         }
-       return  intArr;
+        return intArr;
     }
-    public static void printArray(int[] arr){
-        if (arr != null && arr.length > 0){
+
+    public static void printArray(int[] arr) {
+        if (arr != null && arr.length > 0) {
             for (int i = 0; i < arr.length; i++) {
                 System.out.print(arr[i] + " ");
             }
         }
     }
 
-    public static void print2DArray(int[][] arr){
-        if (arr != null && arr.length > 0){
+    public static void print2DArray(int[][] arr) {
+        if (arr != null && arr.length > 0) {
             for (int i = 0; i < arr.length; i++) {
                 for (int j = 0; j < arr[i].length; j++) {
                     System.out.printf("%4d", arr[i][j]);

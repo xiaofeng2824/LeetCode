@@ -52,12 +52,11 @@ package myArray;
 public class HowMuchWater2 {
 
 
-
     public static void main(String[] args) {
 
         //int[] arr = {1,8,6,2,5,4,8,3,7};
         //int[] arr = {1,1};
-        int[] arr = {4,3,2,1,4};
+        int[] arr = {4, 3, 2, 1, 4};
         int maxarea = maxArea(arr);
 
         System.out.println(maxarea);
@@ -65,10 +64,10 @@ public class HowMuchWater2 {
     }
 
 
-    public static  int maxArea(int[] height) {
+    public static int maxArea(int[] height) {
 
         // 边界值处理
-        if (height == null || height.length < 2){
+        if (height == null || height.length < 2) {
             return 0;
         }
 
@@ -79,17 +78,17 @@ public class HowMuchWater2 {
         int j = height.length - 1;
 
         //
-        while (i < j){
+        while (i < j) {
 
-            if (height[i] >= height[j]){
-                int value = (j-i) * Math.min(height[i],height[j]);
+            if (height[i] >= height[j]) {
+                int value = (j - i) * Math.min(height[i], height[j]);
                 max = value > max ? value : max;
                 // 尽量保持优势 小的移动
                 j--;
             }
 
-            if (height[i] < height[j]){
-                int value = (j-i) * Math.min(height[i],height[j]);
+            if (height[i] < height[j]) {
+                int value = (j - i) * Math.min(height[i], height[j]);
                 max = value > max ? value : max;
                 // 尽量保持优势 小的移动
                 i++;

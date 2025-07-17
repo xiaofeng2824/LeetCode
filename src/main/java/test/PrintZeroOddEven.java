@@ -6,25 +6,31 @@ public class PrintZeroOddEven {
     public static Object o = new Object();
     public static int count = 1;
 
-    public static  boolean zeroFlag = true;
-    public static  boolean oddFlag = true;
-    public static  boolean evenFlag = true;
+    public static boolean zeroFlag = true;
+    public static boolean oddFlag = true;
+    public static boolean evenFlag = true;
 
 
     public static void main(String[] args) {
 
-        int n= 5;
-        new Thread(()->{zero(n);}).start();
-        new Thread(()->{odd(n);}).start();
-        new Thread(()->{even(n);}).start();
+        int n = 5;
+        new Thread(() -> {
+            zero(n);
+        }).start();
+        new Thread(() -> {
+            odd(n);
+        }).start();
+        new Thread(() -> {
+            even(n);
+        }).start();
 
     }
 
-    public static void zero(int n){
-        while (true){
-        synchronized (o){
+    public static void zero(int n) {
+        while (true) {
+            synchronized (o) {
                 if (count >= n) break;
-                if (!zeroFlag){
+                if (!zeroFlag) {
                     try {
                         o.wait();
                     } catch (InterruptedException e) {
@@ -44,34 +50,11 @@ public class PrintZeroOddEven {
         }
     }
 
-    public static void odd(int n){
-        while (true){
-                synchronized (o){
+    public static void odd(int n) {
+        while (true) {
+            synchronized (o) {
                 if (count > n) break;
-                if (zeroFlag){
-                    try {
-                        o.wait();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                    // 打印
-                    System.out.print(count);
-                    oddFlag = false;
-                    evenFlag = false;
-                    zeroFlag = true;
-                    count++;
-
-                o.notifyAll();
-            }
-        }
-    }
-
-    public static void even(int n){
-        while (true){
-            synchronized (o){
-                if (count > n) break;
-                if (zeroFlag){
+                if (zeroFlag) {
                     try {
                         o.wait();
                     } catch (InterruptedException e) {
@@ -79,11 +62,34 @@ public class PrintZeroOddEven {
                     }
                 }
                 // 打印
-                    System.out.print(count);
-                    oddFlag = false;
-                    evenFlag = false;
-                    zeroFlag = true;
-                    count++;
+                System.out.print(count);
+                oddFlag = false;
+                evenFlag = false;
+                zeroFlag = true;
+                count++;
+
+                o.notifyAll();
+            }
+        }
+    }
+
+    public static void even(int n) {
+        while (true) {
+            synchronized (o) {
+                if (count > n) break;
+                if (zeroFlag) {
+                    try {
+                        o.wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                // 打印
+                System.out.print(count);
+                oddFlag = false;
+                evenFlag = false;
+                zeroFlag = true;
+                count++;
                 o.notifyAll();
             }
         }

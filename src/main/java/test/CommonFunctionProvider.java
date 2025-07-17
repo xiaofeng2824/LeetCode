@@ -3,7 +3,10 @@ package test;
 //import com.alibaba.fastjson.JSONObject;
 //import lombok.extern.slf4j.Slf4j;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,15 +16,10 @@ import java.util.List;
 
 /**
  * @ClassName: CommonFunctionProvider
- *
  * @Description: 测试数据提供，解析json数据
- *
  * @Author chenrongjun
- *
  * @Date 2021-09-17
- *
  * @Version 1.0
- *
  */
 //@Slf4j
 public class CommonFunctionProvider {
@@ -29,16 +27,16 @@ public class CommonFunctionProvider {
      * @Description：将data存入到filePath中
      * @filePath: 文件地址
      */
-    public static void savedata(String filePath,String data) {
+    public static void savedata(String filePath, String data) {
         try {
             OutputStreamWriter os = null;
             FileOutputStream fos = null;
-            OutputStreamWriter osw=null;
+            OutputStreamWriter osw = null;
             // data/inventory/TestCommandInbound/TestCommandInbound.txt
-            File file=new File(filePath);
-            fos=new FileOutputStream(file);//定义输出文件
-            osw=new OutputStreamWriter(fos);//写入输入文件
-            BufferedWriter bWriter=new BufferedWriter(osw);//写入缓存区
+            File file = new File(filePath);
+            fos = new FileOutputStream(file);//定义输出文件
+            osw = new OutputStreamWriter(fos);//写入输入文件
+            BufferedWriter bWriter = new BufferedWriter(osw);//写入缓存区
             bWriter.write(data);
             bWriter.close();//关闭写入缓存区
             osw.close();//关闭写入文件内容
@@ -73,31 +71,31 @@ public class CommonFunctionProvider {
 //            e.printStackTrace();
 //            return null;
 //        }
-////        try {
-////            JSONObject json = new JSONObject();
-////            Resource resource = new ClassPathResource(filePath);
-////            InputStream is = resource.getInputStream();
-////            InputStreamReader isr = new InputStreamReader(is);
-////            BufferedReader br = new BufferedReader(isr);
-////            String data = null;
-////            //首行为字段名
-////            while ((data = br.readLine()) != null) {
-////                json=JSONObject.parseObject(data);
-////            }
-////            br.close();
-////            is.close();
-////            isr.close();
-////            return json;
-////        } catch (Exception e) {
-////            e.printStackTrace();
-////        }
-////        return null;
+
+    /// /        try {
+    /// /            JSONObject json = new JSONObject();
+    /// /            Resource resource = new ClassPathResource(filePath);
+    /// /            InputStream is = resource.getInputStream();
+    /// /            InputStreamReader isr = new InputStreamReader(is);
+    /// /            BufferedReader br = new BufferedReader(isr);
+    /// /            String data = null;
+    /// /            //首行为字段名
+    /// /            while ((data = br.readLine()) != null) {
+    /// /                json=JSONObject.parseObject(data);
+    /// /            }
+    /// /            br.close();
+    /// /            is.close();
+    /// /            isr.close();
+    /// /            return json;
+    /// /        } catch (Exception e) {
+    /// /            e.printStackTrace();
+    /// /        }
+    /// /        return null;
 //
 //    }
-
-    public static List connectDBQuery(String user,String password,String connectURL,String sql){
-        String driver="com.mysql.jdbc.Driver";
-        List result=new ArrayList();
+    public static List connectDBQuery(String user, String password, String connectURL, String sql) {
+        String driver = "com.mysql.jdbc.Driver";
+        List result = new ArrayList();
 //        String user="yh_dev";
 //        String password="DvpJe2x";
 //        String url="jdbc:mysql://10.251.77.188:3306/order_fulfillment_center";
@@ -123,7 +121,7 @@ public class CommonFunctionProvider {
             //关闭数据库
             conn.close();
             return result;
-        }catch (Exception e){
+        } catch (Exception e) {
 
             e.printStackTrace();
             return null;

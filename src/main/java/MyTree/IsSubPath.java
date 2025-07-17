@@ -22,7 +22,7 @@ public class IsSubPath {
 //        TreeNode.print(root);
 
 
-        System.out.println(isSubPath(head,root));
+        System.out.println(isSubPath(head, root));
     }
 
     public static boolean isSubPath(ListNode head, TreeNode root) {
@@ -47,13 +47,13 @@ public class IsSubPath {
     }
 
     // 单一节点向下遍历
-    public static boolean helper(ListNode current,TreeNode treeNode){
+    public static boolean helper(ListNode current, TreeNode treeNode) {
         if (current == null) return true;
         if (treeNode == null) return false;
 
-        if (current.val == treeNode.val){
-            return  helper(current.next,treeNode.left) || helper(current.next,treeNode.right);
-        }else {
+        if (current.val == treeNode.val) {
+            return helper(current.next, treeNode.left) || helper(current.next, treeNode.right);
+        } else {
             return false;
         }
     }

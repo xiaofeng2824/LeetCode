@@ -9,7 +9,7 @@ public class CountGoodNumbers {
      * https://leetcode.cn/problems/count-good-numbers/submissions/621933893/?envType=daily-question&envId=2025-04-13
      * 1922 统计好数字的数目
      */
-    public static List<Long>  zhiShuList = Arrays.asList(2L,3L,5L,7L);
+    public static List<Long> zhiShuList = Arrays.asList(2L, 3L, 5L, 7L);
 
     public static void main(String[] args) {
 
@@ -26,13 +26,13 @@ public class CountGoodNumbers {
 
     public static int countGoodNumbers(long n) {
 
-        long start = (long) Math.pow(10,n-1);
-        long end = (long) Math.pow(10,n);
+        long start = (long) Math.pow(10, n - 1);
+        long end = (long) Math.pow(10, n);
 
         int count = 0;
 
-        for (long i = 0;i< end;i++){
-            if (isGoodNumber(i,n)){
+        for (long i = 0; i < end; i++) {
+            if (isGoodNumber(i, n)) {
                 count++;
                 count = count % 1000000007;
             }
@@ -41,29 +41,30 @@ public class CountGoodNumbers {
     }
 
     // 判断是否是一个好数字
-    private static boolean isGoodNumber(long num,long n) {
+    private static boolean isGoodNumber(long num, long n) {
         String str = String.valueOf(num);
-        if (str.length() < n){
+        if (str.length() < n) {
             str = String.format("%0" + n + "d", num);
         }
 
         char[] chars = str.toCharArray();
-        for (int i=0;i< chars.length;i++){
-          char charNum =  chars[i];
+        for (int i = 0; i < chars.length; i++) {
+            char charNum = chars[i];
             Long value = Long.valueOf(charNum) - '0';
-            if (i%2 == 0){
-                if (!(value%2 == 0)){
+            if (i % 2 == 0) {
+                if (!(value % 2 == 0)) {
                     return false;
                 }
-            }else {
-                if (!isZhiShu(value)){
-                    return  false;
+            } else {
+                if (!isZhiShu(value)) {
+                    return false;
                 }
             }
-         }
+        }
         return true;
     }
-    private static  boolean isZhiShu(long num){
+
+    private static boolean isZhiShu(long num) {
         return zhiShuList.contains(num);
     }
 
@@ -73,9 +74,9 @@ public class CountGoodNumbers {
 
         long res = 1;
         for (int i = 0; i < n; i++) {
-            if (i %2 == 0){
+            if (i % 2 == 0) {
                 res *= 5;
-            }else {
+            } else {
                 res *= 4;
             }
         }

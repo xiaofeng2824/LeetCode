@@ -11,11 +11,11 @@ public class PrintOddEven {
     public static void main(String[] args) {
 
         int n = 5;
-       Thread oddThread =  new Thread(()->{
-         odd(n);
+        Thread oddThread = new Thread(() -> {
+            odd(n);
         });
 
-        Thread evenThread =  new Thread(()->{
+        Thread evenThread = new Thread(() -> {
             even(n);
         });
 
@@ -40,21 +40,21 @@ public class PrintOddEven {
         while (true) {
             synchronized (o) {
                 if (count > n) break;
-             if (count % 2 == 0){
-                 System.out.println(count);
-                 count++;
-             }
+                if (count % 2 == 0) {
+                    System.out.println(count);
+                    count++;
+                }
             }
         }
     }
 
     // 奇数
-    public static void odd(int n){
+    public static void odd(int n) {
 
         while (true) {
             synchronized (o) {
                 if (count > n) break;
-                if (count % 2 == 1){
+                if (count % 2 == 1) {
                     System.out.println(count);
                     count++;
                 }

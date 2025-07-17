@@ -23,20 +23,19 @@ public class PalindromeList_05 {
     ListNode temp = null;
 
     /*
-    * 普通方式：
-    * 思路：1.先将链表转化为一个arraylist
-    *      2.再将arraylist 转化为数组
-    *      3.用数组方式验证是不是回文链表
-    * */
-    public static  boolean isPalindrome(ListNode head) {
+     * 普通方式：
+     * 思路：1.先将链表转化为一个arraylist
+     *      2.再将arraylist 转化为数组
+     *      3.用数组方式验证是不是回文链表
+     * */
+    public static boolean isPalindrome(ListNode head) {
 
         //设置一个标识
         boolean flag = true;
 
         //第一步：将链表转化为一个arraylist
         List<Integer> list = new ArrayList<Integer>();
-        while(head != null)
-        {
+        while (head != null) {
             list.add(head.val);
             head = head.next;
         }
@@ -49,45 +48,39 @@ public class PalindromeList_05 {
         int i = 0;
         int j = objects.length - 1;
 
-        while(i < j)
-        {
-          if(objects[i].equals(objects[j]))
-          {
+        while (i < j) {
+            if (objects[i].equals(objects[j])) {
                 i++;
                 j--;
-          }
-          else
-          {
-              flag = false;
-              break;
-          }
+            } else {
+                flag = false;
+                break;
+            }
         }
 
-         return flag;
+        return flag;
     }
 
     /*
-    * 进阶：
-    *  你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
-    *
-    *  优化方案：
-    *  使用递归：利用操作系统的栈来解决问题
-    *  递归出口：head.next 与p.next 不相等
-    *  递归函数：
-    * */
+     * 进阶：
+     *  你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
+     *
+     *  优化方案：
+     *  使用递归：利用操作系统的栈来解决问题
+     *  递归出口：head.next 与p.next 不相等
+     *  递归函数：
+     * */
 
-    public  boolean isPalindrome01(ListNode head)
-    {
+    public boolean isPalindrome01(ListNode head) {
         //将temp节点暂存head节点
-         temp = head;
+        temp = head;
 
         return isPalindromeList(head);
 
     }
 
-    public  boolean isPalindromeList(ListNode head)
-    {
-        if(head == null)
+    public boolean isPalindromeList(ListNode head) {
+        if (head == null)
             return true;
         boolean result = isPalindromeList(head.next) && (head.val == temp.val);
         temp = temp.next;

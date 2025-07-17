@@ -10,8 +10,8 @@ import java.util.concurrent.locks.ReentrantLock;
 public class EatenApples {
 
     public static void main(String[] args) {
-      int[]  apples = {1,2,3,5,2}, days = {3,2,1,4,2};
-      System.out.println(eatenApples(apples,days));
+        int[] apples = {1, 2, 3, 5, 2}, days = {3, 2, 1, 4, 2};
+        System.out.println(eatenApples(apples, days));
     }
 
     public static int eatenApples(int[] apples, int[] days) {
